@@ -61,6 +61,15 @@ class PromotionController extends Controller
         
         $promotions = $this->userRepo->getPromotions($bankId);
 
+        $proms = [];
+        foreach ($promotions as $promotion) {
+            $proms [] = [
+                'description' => $promotion['description'],
+                'title' => $promotion['title'],
+                'title' => $promotion['title'],
+                'image' => $promotion['title'],
+            ];
+        }
 //        $url = Storage::url('/uploads/promotions/hamburger.jpeg');
 //        dd($url);
         $view = view('admin.partials.promotions', compact('promotions'))->render();
