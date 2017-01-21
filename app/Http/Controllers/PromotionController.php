@@ -3,14 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+use App\Repositories\Contracts\UserRepositoryInterface;
 
 class PromotionController extends Controller
 {
 
-    public function __construct()
-    {
+    private $userRepo;
+
+    public function __construct(
+        UserRepositoryInterface $userRepo
+
+    ) {
+        $this->userRepo = $userRepo;
     }
     
     public function index()
@@ -27,5 +34,12 @@ class PromotionController extends Controller
 
         $view = view('admin.partials.cardList', compact('cards'))->render();
         return response()->json(['success' =>'true','view'=>$view]);
+    }
+
+    public function postCreate(Request $request) {
+
+        $data = Input::all();
+        
+        $this->userRepo->createPromotion($data);
     }
 }
