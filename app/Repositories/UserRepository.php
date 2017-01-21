@@ -10,15 +10,18 @@ namespace App\Repositories;
 
 use App\Repositories\Contracts\UserRepositoryInterface;
 use App\Models\User;
+use App\Models\Promotion;
 
 class UserRepository implements UserRepositoryInterface
 {
 
     private $user;
+    private $promotion;
 
-    public function __construct(User $user)
+    public function __construct(User $user, Promotion $promotion)
     {
         $this->user = $user;
+        $this->promotion = $promotion;
     }
 
     /**
@@ -182,6 +185,12 @@ class UserRepository implements UserRepositoryInterface
         $user->save();
 
         return true;
+    }
+    
+    public function createPromotion($data) 
+    {
+//        $promotion = $this->
+        dd($data);
     }
 
 }

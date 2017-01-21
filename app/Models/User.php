@@ -36,6 +36,6 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      */
     public function roles()
     {
-        return $this->belongsToMany('Cartalyst\Sentinel\Roles\EloquentRole', 'role_users', 'user_id', 'role_id')->withTimestamps();
+       // return $this->belongsToMany('Cartalyst\Sentinel\Roles\EloquentRole', 'role_users', 'user_id', 'role_id')->withTimestamps();
     }
 }

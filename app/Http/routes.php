@@ -18,6 +18,7 @@ Route::group(['middleware' => ['web']], function () {
 Route::group([], function () {
     Route::get('/admin/create-promotion', 'PromotionController@index');
     Route::get('/admin/get-cards', 'PromotionController@getCards');
+    Route::post('/admin/promotion', 'PromotionController@postCreate');
 });
 
 Route::post('auth/login-action', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@postLogin']);
