@@ -13,6 +13,7 @@ class PromotionController extends Controller
     
     public function index()
     {
+//        $banks = 
         return view('admin.createPromotion');
     }
 }
