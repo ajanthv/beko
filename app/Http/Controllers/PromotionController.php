@@ -69,12 +69,9 @@ class PromotionController extends Controller
                 'description' => $promotion['description'],
                 'title' => $promotion['title'],
                 'cards' => $cards,
-                'image' => (!empty($promotion['image'])) ? ENV('APP_URL').'storage/uploads/promotions/'.$promotion['image'] : '',
+                'image' => $promotion['image']
             ];
         }
-//        dd($proms);
-//        $url = Storage::url('/uploads/promotions/hamburger.jpeg');
-//        dd($url);
         $view = view('admin.partials.promotions', compact('promotions'))->render();
         return response()->json(['success' =>'true','view'=>$view]);
     }

@@ -4,7 +4,7 @@
         <!-- block -->
         <div class="col-sm-6 col-md-4 grid-item">
             <div class="thumbnail">
-                {{--<img src="{{asset('storage/uploads/promotions/'.$promotion['image'])}}" alt="Bootstrap Thumbnail: Beautiful Bootstrap Thumbnail like Material Design Cards">--}}
+                <img src="{{asset('/uploads/promotions/'.$promotion['image'])}}" alt="Bootstrap Thumbnail: Beautiful Bootstrap Thumbnail like Material Design Cards">
                 <div class="caption">
                     <h3>{{$promotion['title']}}</h3>
                     <div class="beko-tags">
