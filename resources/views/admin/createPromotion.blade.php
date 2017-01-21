@@ -41,11 +41,14 @@
                     <div class="form-group">
                         <label for="phone">Choose Card</label>
                         <div class="clearfix"></div>
-                        <select id="cardSelector" class="selectpicker" multiple>
-                            <option>Platinum</option>
-                            <option>Gold</option>
-                            <option>Bronze</option>
-                        </select>
+                        <div id="cardSelectorDiv">
+                            <select id="cardSelector" class="" multiple>
+                                <option>Platinum</option>
+                                <option>Gold</option>
+                                <option>Bronze</option>
+                            </select>
+                        </div>
+
                     </div>
 
                 </div>
