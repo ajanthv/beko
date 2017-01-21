@@ -159,7 +159,6 @@ return [
 		/*
 		 * Developer packages
 		 */
-		Dingo\Api\Provider\LaravelServiceProvider::class,
 		Laravel\Socialite\SocialiteServiceProvider::class,
 		Collective\Html\HtmlServiceProvider::class,
 		LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
