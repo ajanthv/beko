@@ -16,7 +16,7 @@
     </nav>
 
     <div class="container">
-        <h2>Create Promotion</h2>
+        <h2>Create promotion</h2>
         <form class="col-md-12 well" role="form" method="POST" action="{{ urlWithoutSchema('/admin/promotion') }}" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6">
