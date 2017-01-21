@@ -12,6 +12,7 @@ use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use Cartalyst\Sentinel\Checkpoints\NotActivatedException;
 use Cartalyst\Sentinel\Checkpoints\ThrottlingException;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
@@ -31,53 +32,31 @@ class AuthController extends Controller
      */
     public function getLogin()
     {
-		// TODO : login form
-        // return view('login');
+        return view('admin.login');
     }
 
     /**
      * Verify user and log into the system.
-     *
      * @param LoginRequest $request
-     * @internal param array $data
+     * @return Redirect
      */
     protected function postLogin(LoginRequest $request)
     {
-		// TODO : user login process
-        try {
-            $errors = [];
+        $errors = [];
 
-            $remember = (bool) $request->get('remember', false);
-
-            $credentials = [
-                'email' => $request->get('email'),
-                'password' => $request->get('password')
-            ];
-
-            if (Sentinel::authenticate($credentials, $remember))
-            {
-                return redirect()
-                    ->intended('/');
+        $data = Input::get();
+        $response = DB::table('users')->where('email', $data['email'])->first();
+        if (isset($response->id)) {
+            if ($response->password == sha1($data['password'])) {
+                return redirect('/');
+            } else {
+                $request->session()->flash('message', 'Incorrect Password!');
+                return redirect('/admin');
             }
-
-            $errors[] = trans('messages.flash_notification_login_failed');
-
+        } else {
+            $request->session()->flash('message', 'Incorrect Email!');
+                return redirect('/admin');
         }
-        catch (NotActivatedException $e)
-        {
-            return redirect()
-                ->intended('reactivate')
-                ->with('user', $e->getUser());
-        }
-        catch (ThrottlingException $e)
-        {
-            $delay = $e->getDelay();
-
-            $errors[] = trans('messages.flash_notification_wait', ['delay' => $delay]);
-        }
-
-        return redirect()
-            ->intended('auth/login')->withErrors($errors);
 
     }
 

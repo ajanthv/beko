@@ -61,6 +61,23 @@ if (!function_exists('getUserDevice')) {
 
 }
 
+if (!function_exists('urlWithoutSchema')) {
+    /**
+     * Generate a url for the application without schema.
+     *
+     * @param  string $path
+     * @param  mixed $parameters
+     * @param  bool $secure
+     * @return string
+     */
+    function urlWithoutSchema($path = null, $parameters = array(), $secure = null)
+    {
+        $url = app('url')->to($path, $parameters, $secure);
+
+        return str_replace(parse_url($url, PHP_URL_SCHEME) . ':', '', $url);
+    }
+}
+
 if (!function_exists('getDomainFromUrl')) {
     /**
      * @param string $url

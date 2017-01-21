@@ -9,8 +9,11 @@ Route::get('/', function(){
 });
 
 // Authentication routes...
-Route::post('auth/login-action', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@postLogin']);
-Route::get('auth/login', ['as' => 'auth.login_form', 'uses' => 'Auth\AuthController@getLogin']);
+Route::group(['middleware' => ['web']], function () {
+    Route::get('/admin', 'Auth\AuthController@getLogin');
+    Route::post('/admin/authenticate', 'Auth\AuthController@postLogin');
+});
+
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 // Registration routes...
