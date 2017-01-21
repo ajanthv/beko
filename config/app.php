@@ -162,7 +162,6 @@ return [
 		Dingo\Api\Provider\LaravelServiceProvider::class,
 		Laravel\Socialite\SocialiteServiceProvider::class,
 		Collective\Html\HtmlServiceProvider::class,
-		Intervention\Image\ImageServiceProvider::class,
 		LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
 		LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
 		
