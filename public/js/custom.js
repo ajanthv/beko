@@ -5,9 +5,9 @@ $(document).on('change', '#bankSelector', function () {
         url: base_url+'/admin/get-cards',
         data: {'bankId':bankId},
         success: function (obj) {
-            console.log(obj);
+            console.log(obj.view);
             if(obj.success){
-                $('#cardSelector').html(obj.view);
+                $('#cardSelectorDiv').html(obj.view);
             }
         }
     });
