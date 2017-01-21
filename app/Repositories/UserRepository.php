@@ -201,9 +201,9 @@ class UserRepository implements UserRepositoryInterface
         return true;
     }
 
-    public function getPromotions($bankId, $cardId)
+    public function getPromotions($bankId)
     {
-        
+        return $this->promotion->where('bank_id')->get();
 
     }
 }

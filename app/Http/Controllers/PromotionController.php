@@ -53,11 +53,14 @@ class PromotionController extends Controller
     }
 
     public function getPromotions() {
+        
         $data = Input::all();
         
         $bankId = $data['bank_id'];
-        $cardId = $data['card_id'];
         
-        $promotions = $this->userRepo->getPromotions($bankId, $cardId);
+        $promotions = $this->userRepo->getPromotions($bankId);
+
+        $view = view('admin.partials.promotions', compact('promotions'))->render();
+        return response()->json(['success' =>'true','view'=>$view]);
     }
 }

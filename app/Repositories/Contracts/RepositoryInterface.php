@@ -126,5 +126,5 @@ interface RepositoryInterface
 
     public function createPromotion($data, $imageName);
 
-    public function getPromotions($bankId, $cardId);
+    public function getPromotions($bankId);
 }
