@@ -60,13 +60,11 @@ class PromotionController extends Controller
         $bankId = isset($data['bank_id']) ? $data['bank_id'] : 1;
         
         $promotions = $this->userRepo->getPromotions($bankId);
-        dd($promotions);
 
         $proms = [];
         foreach ($promotions as $promotion) {
-            $cardIds = json_decode($promotions['creditcards']);
-            $cards = DB::table('creditcards')->whereIn('id',$cardIds)->get();
-            dd($cards);
+            $cardIds = json_decode($promotion['creditcards']);
+            $cards = DB::table('creditcards')->whereIn('id',$cardIds)->select('name', 'color')->get();
             $proms [] = [
                 'description' => $promotion['description'],
                 'title' => $promotion['title'],
