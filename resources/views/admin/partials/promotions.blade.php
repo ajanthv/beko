@@ -11,7 +11,7 @@
                         <span class="label label-warning">Gold</span>
                         <span class="label label-primary">Bronze</span>
                     </div>
-                    <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                    <p class="card-description">{{$promotion->description}}</p>
                     <p class="fav-btn-cont"><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a></p>
                 </div>
             </div>
