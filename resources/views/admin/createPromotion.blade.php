@@ -29,23 +29,25 @@
                         <input type="file">
                     </div>
                     <div class="form-group">
+                        <label for="subject">Bank</label>
+                        <select id="bankSelector" class="form-control" name="subject">
+                            @if(!empty($banks))
+                                @foreach($banks as $key=>$bank)
+                                    <option value={{$key}}>{{$bank}}</option>
+                                @endforeach
+                            @endif
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="phone">Choose Card</label>
                         <div class="clearfix"></div>
-                        <select class="selectpicker" multiple>
+                        <select id="cardSelector" class="selectpicker" multiple>
                             <option>Platinum</option>
                             <option>Gold</option>
                             <option>Bronze</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="subject">Bank</label>
-                        <select class="form-control" name="subject">
-                            <option selected value="na">Choose One:</option>
-                            <option value="inquiry">CAT 1</option>
-                            <option value="suggestions">CAT 2</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
+
                 </div>
 
                 <div class="col-md-6">
