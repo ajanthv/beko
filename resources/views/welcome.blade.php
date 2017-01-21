@@ -22,14 +22,15 @@
             <div class="container">
                 <h2 class="main-title">New Promotions</h2>
                 <div class="filter-btns">
-                    <p>
-                    <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-success">Bank</button>
-                        <button type="button" class="btn btn-danger">Card</button>
-                    </div>
-                    </p>
+                        <select id="bank_promotion_selector" class="form-control">
+                            @if(!empty($banks))
+                                @foreach($banks as $bank)
+                                    <option value="{{$bank->id}}">{{$bank->name}}</option>
+                                @endforeach
+                            @endif
+                        </select>
                 </div>
-                <div id="promotions_list" class="row grid">
+                <div id="promotions_list">
 
                 </div>
             </div>

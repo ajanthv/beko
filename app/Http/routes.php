@@ -4,9 +4,8 @@ use Cartalyst\Sentinel\Laravel\Facades\Activation;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 
 // Landing page route
-Route::get('/', function(){
-    return view('welcome');
-});
+
+Route::get('/', 'PromotionController@getWelcome');
 
 // Authentication routes...
 Route::group(['middleware' => ['web']], function () {

@@ -14,12 +14,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
     <link href="{{urlWithoutSchema('/css/custom.css')}}" rel='stylesheet' type='text/css'>
 
 
     <!-- JavaScripts -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="{{urlWithoutSchema('/js/custom.js')}}"></script>
     <script src="{{urlWithoutSchema('/js/bootstrap.js')}}"></script>
     <script src="http://momentjs.com/downloads/moment.js"></script>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>

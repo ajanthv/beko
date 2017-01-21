@@ -72,7 +72,15 @@ class PromotionController extends Controller
                 'image' => $promotion['image']
             ];
         }
-        $view = view('admin.partials.promotions', compact('promotions'))->render();
+        $view = view('admin.partials.promotions', compact('proms'))->render();
         return response()->json(['success' =>'true','view'=>$view]);
+    }
+
+    public function getWelcome() {
+
+        $banks = DB::table('banks')->select('id', 'name')->get();
+
+        return view('welcome')->with('banks', $banks);
+
     }
 }

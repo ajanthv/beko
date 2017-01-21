@@ -64,3 +64,7 @@
         </form>
     </div>
     @endsection
+
+@section('custom_js')
+    <script src="{{urlWithoutSchema('/js/custom.js')}}"></script>
+@endsection
