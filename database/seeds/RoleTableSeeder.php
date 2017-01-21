@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Cartalyst\Sentinel\Roles\EloquentRole;
 
 class RoleTableSeeder extends Seeder
 {

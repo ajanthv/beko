@@ -9,7 +9,6 @@
 namespace App\Repositories;
 
 use App\Repositories\Contracts\RoleRepositoryInterface;
-use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 
 class RoleRepository implements RoleRepositoryInterface
 {
@@ -25,7 +24,7 @@ class RoleRepository implements RoleRepositoryInterface
      */
     public function find($roleId)
     {
-        return Sentinel::findRoleById($roleId);
+//        return Sentinel::findRoleById($roleId);
     }
 
     /**
@@ -34,7 +33,7 @@ class RoleRepository implements RoleRepositoryInterface
      */
     public function findBySlug($roleSlug)
     {
-        return Sentinel::findRoleBySlug($roleSlug);
+//        return Sentinel::findRoleBySlug($roleSlug);
     }
 
     /**
@@ -43,7 +42,7 @@ class RoleRepository implements RoleRepositoryInterface
      */
     public function findByName($roleName)
     {
-        return Sentinel::findRoleByName($roleName);
+//        return Sentinel::findRoleByName($roleName);
     }
 
     /**
@@ -52,7 +51,7 @@ class RoleRepository implements RoleRepositoryInterface
      */
     public function create($role)
     {
-        return Sentinel::getRoleRepository()->createModel()->create($role);
+//        return Sentinel::getRoleRepository()->createModel()->create($role);
     }
 
     /**

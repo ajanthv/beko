@@ -10,7 +10,6 @@ namespace App\Repositories;
 
 use App\Repositories\Contracts\UserRepositoryInterface;
 use App\Models\User;
-use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 
 class UserRepository implements UserRepositoryInterface
 {
@@ -158,11 +157,11 @@ class UserRepository implements UserRepositoryInterface
      */
     public function assignRole($userId, $roleSlug)
     {
-        $role = Sentinel::findRoleBySlug($roleSlug);
+        /*$role = Sentinel::findRoleBySlug($roleSlug);
 
         $user = $this->user->find($userId);
 
-        $user->roles()->attach($role);
+        $user->roles()->attach($role);*/
 
         return true;
     }
