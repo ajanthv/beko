@@ -9,8 +9,12 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.css' rel='stylesheet' type='text/css'>
-    <link href="{{urlWithoutSchema('/css/custom.css')}}" rel='stylesheet' type='text/css'>
+
     <link href="{{urlWithoutSchema('/css/bootstrap.css')}}" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link href="{{urlWithoutSchema('/css/custom.css')}}" rel='stylesheet' type='text/css'>
 
 
     <!-- JavaScripts -->
@@ -39,7 +43,7 @@
 <script type="text/javascript">
     var base_url = "{{ urlWithoutSchema('') }}";
 </script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
 <!--Custom java scripts start-->
 @yield('custom_js')
 <!--Custom java scripts end-->

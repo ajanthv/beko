@@ -18,8 +18,7 @@
 		"dingo/api": "1.0.*@dev",
 		"laravel/socialite": "^2.0",
         "laravelcollective/html": "5.2.*",
-        "lucadegasperi/oauth2-server-laravel": "5.1.*",
-        "intervention/image": "^2.3"
+        "lucadegasperi/oauth2-server-laravel": "5.1.*"
     },
     "autoload": {
         "classmap": [
