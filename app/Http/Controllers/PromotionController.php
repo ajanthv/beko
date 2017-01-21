@@ -43,7 +43,7 @@ class PromotionController extends Controller
 //        $filename =  md5(date('Y-m-d H:i:s')). '.'.$image->getClientOriginalExtension();
 
         $imageName = $image->getClientOriginalName();
-        $path = storage_path(). '/uploads/promotions/';
+        $path = public_path(). '/uploads/promotions/';
         $image->move($path , $imageName);
 
         $data = Input::all();
@@ -69,9 +69,10 @@ class PromotionController extends Controller
                 'description' => $promotion['description'],
                 'title' => $promotion['title'],
                 'cards' => $cards,
-                'image' => $promotion['title'],
+                'image' => (!empty($promotion['image'])) ? ENV('APP_URL').'storage/uploads/promotions/'.$promotion['image'] : '',
             ];
         }
+//        dd($proms);
 //        $url = Storage::url('/uploads/promotions/hamburger.jpeg');
 //        dd($url);
         $view = view('admin.partials.promotions', compact('promotions'))->render();
