@@ -11,8 +11,6 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">BEKO <span>PROMOTIONS</span></a>
                 </div>
-
-
             </div>
         </nav>
         <!-- nav end -->
