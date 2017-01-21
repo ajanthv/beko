@@ -56,7 +56,7 @@ class PromotionController extends Controller
         
         $data = Input::all();
         
-        $bankId = $data['bank_id'];
+        $bankId = isset($data['bank_id']) ? $data['bank_id'] : 1;
         
         $promotions = $this->userRepo->getPromotions($bankId);
 
