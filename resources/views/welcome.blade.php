@@ -20,7 +20,7 @@
 
         <div class="container-fluid cards-row">
             <div class="container">
-                <h2 class="main-title">Promotions</h2>
+                <h2 class="main-title">New Promotions</h2>
                 <div class="filter-btns">
                     <p>
                     <div class="btn-group" role="group" aria-label="...">
