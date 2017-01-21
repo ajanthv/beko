@@ -5,13 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Requests\Request;
 use App\Http\Requests\ResetRequest;
 use App\Http\Controllers\Controller;
-use Cartalyst\Sentinel\Laravel\Facades\Activation;
-use Cartalyst\Sentinel\Laravel\Facades\Reminder;
-use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
-use Cartalyst\Sentinel\Checkpoints\NotActivatedException;
-use Cartalyst\Sentinel\Checkpoints\ThrottlingException;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
@@ -42,8 +37,6 @@ class AuthController extends Controller
      */
     protected function postLogin(LoginRequest $request)
     {
-        $errors = [];
-
         $data = Input::get();
         $response = DB::table('users')->where('email', $data['email'])->first();
         if (isset($response->id)) {
@@ -57,7 +50,6 @@ class AuthController extends Controller
             $request->session()->flash('message', 'Incorrect Email!');
                 return redirect('/admin');
         }
-
     }
 
     /**
@@ -69,33 +61,9 @@ class AuthController extends Controller
         // return view('register');
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param RegisterRequest $request
-     * @internal param array $data
-     */
-    public function postRegister(RegisterRequest $request)
-    {
-		// TODO : User registration process
-		if ($user = Sentinel::register($request->all()))
-		{
-			return Redirect::home()->withSuccess('Registration complete.');
-		}
+ 
 
-		return Redirect::back()->withInput()->withErrors('An error occured while registering.');
-    }
-
-    /**
-     * Logging out current user
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function getLogout()
-    {
-        Sentinel::logout(null, true);
-        return redirect()->intended();
-    }
+ 
 
     /**
      * Show password reset email form to the user
@@ -126,7 +94,7 @@ class AuthController extends Controller
     public function postResetPassword(ResetRequest $request)
     {
 		// TODO : Reset password process
-        $user = Sentinel::findByCredentials(['login' => $request->email]);
+        /*$user = Sentinel::findByCredentials(['login' => $request->email]);
 
         if ($user)
         {
@@ -151,7 +119,7 @@ class AuthController extends Controller
         else
         {
             return response()->json(['errors' => [trans('messages.reset_email_invalid')]], 422);
-        }
+        }*/
 
     }
 
@@ -163,7 +131,7 @@ class AuthController extends Controller
     public function getResetPasswordVerify()
     {
 		// TODO : Reset password form with code verification
-        $user = Sentinel::findById(Input::get('id'));
+        /*$user = Sentinel::findById(Input::get('id'));
 
         if (Reminder::exists($user, Input::get('code')))
         {
@@ -176,7 +144,7 @@ class AuthController extends Controller
         {
             //incorrect info was passed
             return redirect();
-        }
+        }*/
 
     }
 
@@ -188,34 +156,6 @@ class AuthController extends Controller
     public function postResetPasswordComplete()
     {
 		// TODO : Password reset process
-        $password = Input::get('password');
-
-        $passwordConf = Input::get('password_confirmation');
-
-        $user = Sentinel::findById(Input::get('id'));
-
-        $reminder = Reminder::exists($user, Input::get('code'));
-
-        // incorrect info was passed.
-        if ($reminder == false)
-        {
-            return redirect()
-                ->intended('auth/login')->withErrors(trans('messages.password_reset_failed'))
-                ;
-        }
-
-        if ($password != $passwordConf)
-        {
-            return view('reset.complete')
-                ->with('id', Input::get('id'))
-                ->with('code', Input::get('code'))
-                ->withErrors(trans('messages.password_reset_match_password'))
-                ;
-
-        }
-
-        Reminder::complete($user, Input::get('code'), $password);
-
-        return redirect()->intended('auth/login')->withSuccess(trans('messages.password_reset_complete'));
+        
     }
 }

@@ -159,7 +159,6 @@ return [
 		/*
 		 * Developer packages
 		 */
-		Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
 		Dingo\Api\Provider\LaravelServiceProvider::class,
 		Laravel\Socialite\SocialiteServiceProvider::class,
 		Collective\Html\HtmlServiceProvider::class,
@@ -220,9 +219,6 @@ return [
 		/*
 		 * Developer packages
 		 */
-		'Activation' => Cartalyst\Sentinel\Laravel\Facades\Activation::class,
-		'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
-		'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
 		'Socialite'  => Laravel\Socialite\Facades\Socialite::class,
 		'Form' => Collective\Html\FormFacade::class,
 		'Html' => Collective\Html\HtmlFacade::class,
