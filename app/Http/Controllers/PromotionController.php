@@ -19,7 +19,7 @@ class PromotionController extends Controller
     ) {
         $this->userRepo = $userRepo;
     }
-    
+
     public function index()
     {
         $banks = DB::table('banks')->lists('name', 'id');
@@ -46,9 +46,18 @@ class PromotionController extends Controller
         $image->move($path , $imageName);
 
         $data = Input::all();
-        
+
         $this->userRepo->createPromotion($data, $image->getClientOriginalName());
 
         return redirect('/admin/create-promotion');
+    }
+
+    public function getPromotions() {
+        $data = Input::all();
+        
+        $bankId = $data['bank_id'];
+        $cardId = $data['card_id'];
+        
+        $promotions = $this->userRepo->getPromotions($bankId, $cardId);
     }
 }

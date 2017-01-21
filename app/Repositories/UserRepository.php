@@ -201,4 +201,9 @@ class UserRepository implements UserRepositoryInterface
         return true;
     }
 
+    public function getPromotions($bankId, $cardId)
+    {
+        
+
+    }
 }
