@@ -21,7 +21,7 @@ $(document).ready(function () {
             success: function (obj) {
                 console.log(obj);
                 if(obj.success){
-                    //$('#group-description-text p').html(obj.message);
+                    $('#promotions_list').html(obj.view);
 
                 }
             }

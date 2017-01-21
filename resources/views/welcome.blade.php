@@ -31,7 +31,6 @@
                 </div>
                 <div id="promotions_list" class="row grid">
 
-
                 </div>
             </div>
         </div>
