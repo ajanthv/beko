@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "19a968da6b5baea75112d772cf1379f8",
-    "content-hash": "08e730dd2a453822f9f87e0eff368861",
+    "hash": "0f50572562007c89e15dd686b345f5aa",
+    "content-hash": "e99e6cbc687e256c86e99c3219936d72",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1797,57 +1797,6 @@
             "time": "2017-01-06 16:41:52"
         },
         {
-            "name": "twbs/bootstrap",
-            "version": "4.0.0-alpha.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "65ffb1c3b6e94440812a2e228cb8e8be512652ec"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/65ffb1c3b6e94440812a2e228cb8e8be512652ec",
-                "reference": "65ffb1c3b6e94440812a2e228cb8e8be512652ec",
-                "shasum": ""
-            },
-            "replace": {
-                "twitter/bootstrap": "self.version"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.3.x-dev"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jacob Thornton",
-                    "email": "jacobthornton@gmail.com"
-                },
-                {
-                    "name": "Mark Otto",
-                    "email": "markdotto@gmail.com"
-                }
-            ],
-            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-            "homepage": "https://getbootstrap.com",
-            "keywords": [
-                "JS",
-                "css",
-                "framework",
-                "front-end",
-                "mobile-first",
-                "responsive",
-                "sass",
-                "web"
-            ],
-            "time": "2017-01-06 16:41:52"
-        },
-        {
             "name": "vlucas/phpdotenv",
             "version": "v2.4.0",
             "source": {
@@ -1899,145 +1848,6 @@
         }
     ],
     "packages-dev": [
-        {
-            "name": "cartalyst/sentinel",
-            "version": "v2.0.13",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cartalyst/sentinel.git",
-                "reference": "04e9e55b4642e18d3404af458b3dae0af5238592"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentinel/zipball/04e9e55b4642e18d3404af458b3dae0af5238592",
-                "reference": "04e9e55b4642e18d3404af458b3dae0af5238592",
-                "shasum": ""
-            },
-            "require": {
-                "cartalyst/support": "~1.0",
-                "illuminate/support": "~5.0",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "illuminate/cookie": "~5.0",
-                "illuminate/database": "~5.0",
-                "illuminate/http": "~5.0",
-                "illuminate/session": "~5.0",
-                "ircmaxell/password-compat": "~1.0",
-                "mockery/mockery": "~0.9",
-                "paragonie/random_compat": "^1.4|^2",
-                "phpunit/phpunit": "~4.0"
-            },
-            "suggest": {
-                "illuminate/database": "By default, Sentinel utilizes the powerful Illuminate database layer.",
-                "illuminate/events": "To hook into various events across Sentinel, we recommend using Illuminate's event dispatcher.",
-                "ircmaxell/password-compat": "Default hashing uses PHP 5.5 password_* functions, with forward-compatible support.",
-                "symfony/http-foundation": "Required for native implementations."
-            },
-            "type": "library",
-            "extra": {
-                "component": "package",
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Cartalyst\\Sentinel\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com",
-                    "homepage": "https://cartalyst.com"
-                }
-            ],
-            "description": "PHP 5.4+ Fully-featured Authentication & Authorization System",
-            "keywords": [
-                "auth",
-                "cartalyst",
-                "codeigniter",
-                "fuelphp",
-                "laravel",
-                "php",
-                "security"
-            ],
-            "time": "2016-09-05 15:16:16"
-        },
-        {
-            "name": "cartalyst/support",
-            "version": "v1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cartalyst/support.git",
-                "reference": "feab60d8190ccce376e67c161b5c0559574b9832"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/support/zipball/feab60d8190ccce376e67c161b5c0559574b9832",
-                "reference": "feab60d8190ccce376e67c161b5c0559574b9832",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "illuminate/mail": "~4.1|~5.0",
-                "illuminate/validation": "~4.1|~5.0",
-                "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "component": "package",
-                "branch-alias": {
-                    "dev-master": "1.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Cartalyst\\Support\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Support helpers.",
-            "keywords": [
-                "cartalyst",
-                "helper",
-                "laravel",
-                "support"
-            ],
-            "time": "2016-06-21 04:08:43"
-        },
         {
             "name": "dingo/api",
             "version": "dev-master",
@@ -2607,68 +2417,6 @@
                 "test"
             ],
             "time": "2015-05-11 14:41:42"
-        },
-        {
-            "name": "intervention/image",
-            "version": "2.3.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Intervention/image.git",
-                "reference": "2bce9a59c43b868300b02a7d31a1e4aa67a200ae"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/2bce9a59c43b868300b02a7d31a1e4aa67a200ae",
-                "reference": "2bce9a59c43b868300b02a7d31a1e4aa67a200ae",
-                "shasum": ""
-            },
-            "require": {
-                "ext-fileinfo": "*",
-                "guzzlehttp/psr7": "~1.1",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9.2",
-                "phpunit/phpunit": "3.*"
-            },
-            "suggest": {
-                "ext-gd": "to use GD library based image processing.",
-                "ext-imagick": "to use Imagick based image processing.",
-                "intervention/imagecache": "Caching extension for the Intervention Image library"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Intervention\\Image\\": "src/Intervention/Image"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Oliver Vogel",
-                    "email": "oliver@olivervogel.net",
-                    "homepage": "http://olivervogel.net/"
-                }
-            ],
-            "description": "Image handling and manipulation library with support for Laravel integration",
-            "homepage": "http://image.intervention.io/",
-            "keywords": [
-                "gd",
-                "image",
-                "imagick",
-                "laravel",
-                "thumbnail",
-                "watermark"
-            ],
-            "time": "2017-01-10 14:15:56"
         },
         {
             "name": "laravel/socialite",
