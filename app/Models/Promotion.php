@@ -20,5 +20,13 @@ class Promotion extends Model implements AuthenticatableContract
      * @var string
      */
     protected $table = 'promotions';
+
+    protected $fillable=[
+        'title',
+        'bank_id',
+        'creditcards',
+        'image',
+        'description'
+    ];
     
 }
