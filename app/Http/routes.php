@@ -14,6 +14,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/admin/authenticate', 'Auth\AuthController@postLogin');
 });
 
+Route::post('auth/login-action', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@postLogin']);
+Route::get('/admin', 'Auth\AuthController@getLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 // Registration routes...
