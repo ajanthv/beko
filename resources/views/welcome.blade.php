@@ -22,6 +22,8 @@
             <div class="container">
                 <h2 class="main-title">New Promotions</h2>
                 <div class="filter-btns">
+                    <label class="pull-left" style="color: black">Select your bank</label>
+                    <div class="clearfix"></div>
                         <select id="bank_promotion_selector" class="form-control">
                             @if(!empty($banks))
                                 @foreach($banks as $bank)

@@ -148,8 +148,8 @@ body {
 
 .fav-btn-cont a {
   margin: 0 auto;
-  padding: 12px 14px 2px;
-  font-size: 24px;
+  padding: 6px 8px 3px 7px;
+  font-size: 13px;
   background-color: #cc1f1f;
 }
 
@@ -195,4 +195,16 @@ body {
 
 .filter-btns p {
   display: inline;
+}
+
+#cardSelector {
+  width: 100%;
+  color: black;
+}
+
+.filter-btns .form-control {
+  width: 300px;
+  border: 3px solid #062D66;
+  height: 40px;
+  /*    margin: 0 auto;*/
 }
