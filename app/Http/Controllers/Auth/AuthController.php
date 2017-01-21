@@ -48,7 +48,7 @@ class AuthController extends Controller
         $response = DB::table('users')->where('email', $data['email'])->first();
         if (isset($response->id)) {
             if ($response->password == sha1($data['password'])) {
-                return redirect('/');
+                return redirect('/admin/create-promotion');
             } else {
                 $request->session()->flash('message', 'Incorrect Password!');
                 return redirect('/admin');

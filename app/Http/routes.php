@@ -14,6 +14,11 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/admin/authenticate', 'Auth\AuthController@postLogin');
 });
 
+// Authentication routes...
+Route::group([], function () {
+    Route::get('/admin/create-promotion', 'PromotionController@index');
+});
+
 Route::post('auth/login-action', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@postLogin']);
 Route::get('/admin', 'Auth\AuthController@getLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
