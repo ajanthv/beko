@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use App\Repositories\Contracts\UserRepositoryInterface;
+use Illuminate\Support\Facades\Storage;
 
 class PromotionController extends Controller
 {
@@ -60,6 +61,8 @@ class PromotionController extends Controller
         
         $promotions = $this->userRepo->getPromotions($bankId);
 
+//        $url = Storage::url('/uploads/promotions/hamburger.jpeg');
+//        dd($url);
         $view = view('admin.partials.promotions', compact('promotions'))->render();
         return response()->json(['success' =>'true','view'=>$view]);
     }
