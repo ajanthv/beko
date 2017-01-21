@@ -16,21 +16,21 @@
     </nav>
 
     <div class="container">
-        <h2>Create New Promotion</h2>
-        <form class="col-md-12 well" role="form" method="POST" action="{{ urlWithoutSchema('/admin/promotion') }}">
+        <h2>Create Promotion</h2>
+        <form class="col-md-12 well" role="form" method="POST" action="{{ urlWithoutSchema('/admin/promotion') }}" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="name">Title</label>
-                        <input type="text" class="form-control" name="title" placeholder="Enter Title">
+                        <input type="text" required class="form-control" name="title" placeholder="Enter Title">
                     </div>
                     <div class="form-group">
-                        <label name="file" for="banner">Banner Image</label>
-                        <input type="file">
+                        <label for="image">Banner Image</label>
+                        <input name="image" required type="file">
                     </div>
                     <div class="form-group">
                         <label for="subject">Bank</label>
-                        <select id="bankSelector" class="form-control" name="bank">
+                        <select id="bankSelector" required class="form-control" name="bank">
                             @if(!empty($banks))
                                 @foreach($banks as $key=>$bank)
                                     <option value={{$key}}>{{$bank}}</option>
@@ -42,7 +42,7 @@
                         <label for="phone">Choose Card</label>
                         <div class="clearfix"></div>
                         <div id="cardSelectorDiv">
-                            <select name="cards[]" id="cardSelector" class="" multiple>
+                            <select name="cards[]" required id="cardSelector" class="" multiple>
                                 <option value="0">Please select the bank</option>
                             </select>
                         </div>
@@ -54,7 +54,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="message">Description</label>
-                        <textarea class="form-control" name="description" rows="11" placeholder="Enter Message"></textarea>
+                        <textarea class="form-control" required name="description" rows="11" placeholder="Enter Message"></textarea>
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary pull-right" type="submit">Create Promotion</button>

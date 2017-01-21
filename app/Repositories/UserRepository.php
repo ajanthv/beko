@@ -187,10 +187,18 @@ class UserRepository implements UserRepositoryInterface
         return true;
     }
     
-    public function createPromotion($data) 
+    public function createPromotion($data, $imageName)
     {
-//        $promotion = $this->
-        dd($data);
+        $promotion_data = [
+            'title' => isset($data['title']) ? $data['title'] : '',
+            'bank_id' => isset($data['bank']) ? $data['bank'] : '1',
+            'image' => $imageName,
+            'creditcards' => (isset($data['cards'])) ? json_encode($data['cards']) : '[]',
+            'description' => $data['description']
+        ];
+
+        $this->promotion->create($promotion_data);
+        return true;
     }
 
 }

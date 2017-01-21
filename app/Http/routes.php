@@ -15,7 +15,7 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 // Authentication routes...
-Route::group([], function () {
+Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/create-promotion', 'PromotionController@index');
     Route::get('/admin/get-cards', 'PromotionController@getCards');
     Route::post('/admin/promotion', 'PromotionController@postCreate');

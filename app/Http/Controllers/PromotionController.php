@@ -38,8 +38,17 @@ class PromotionController extends Controller
 
     public function postCreate(Request $request) {
 
+        $image = $request->file('image');
+//        $filename =  md5(date('Y-m-d H:i:s')). '.'.$image->getClientOriginalExtension();
+
+        $imageName = $image->getClientOriginalName();
+        $path = storage_path(). '/uploads/promotions/';
+        $image->move($path , $imageName);
+
         $data = Input::all();
         
-        $this->userRepo->createPromotion($data);
+        $this->userRepo->createPromotion($data, $image->getClientOriginalName());
+
+        return redirect('/admin/create-promotion');
     }
 }

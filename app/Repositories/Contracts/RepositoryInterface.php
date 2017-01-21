@@ -124,6 +124,6 @@ interface RepositoryInterface
      */
     public function assignPermissions($userId, $permissions);
 
-    public function createPromotion($data) ;
+    public function createPromotion($data, $imageName) ;
     
 }
