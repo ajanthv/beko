@@ -6,7 +6,6 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Repositories\Contracts\UserRepositoryInterface;
 use Illuminate\Support\Facades\Input;
-use LucaDegasperi\OAuth2Server\Facades\Authorizer;
 
 class OauthClientAuthorizationController extends Controller
 {

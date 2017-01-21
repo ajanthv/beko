@@ -159,12 +159,6 @@ return [
 		/*
 		 * Developer packages
 		 */
-		Dingo\Api\Provider\LaravelServiceProvider::class,
-		Laravel\Socialite\SocialiteServiceProvider::class,
-		Collective\Html\HtmlServiceProvider::class,
-		Intervention\Image\ImageServiceProvider::class,
-		LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
-		LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
 		
 		/*
 		 * API service provider
@@ -216,14 +210,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-		/*
-		 * Developer packages
-		 */
-		'Socialite'  => Laravel\Socialite\Facades\Socialite::class,
-		'Form' => Collective\Html\FormFacade::class,
-		'Html' => Collective\Html\HtmlFacade::class,
-		'Image' => Intervention\Image\Facades\Image::class,
-		'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
     ],
 
 ];
