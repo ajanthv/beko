@@ -13,7 +13,7 @@
                 </div>
 
 
-            </div><!-- /.container-fluid -->
+            </div>
         </nav>
         <!-- nav end -->
 
