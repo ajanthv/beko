@@ -106,14 +106,6 @@ interface RepositoryInterface
      */
     public function delete($id);
 
-    /**
-     * Assign user role
-     *
-     * @param $userId
-     * @param $roleSlug
-     * @return bool
-     */
-    public function assignRole($userId, $roleSlug);
 
     /**
      * Assign user permissions

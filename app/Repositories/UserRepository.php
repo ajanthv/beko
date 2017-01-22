@@ -151,23 +151,6 @@ class UserRepository implements UserRepositoryInterface
         return $this->user->find($id)->delete();
     }
 
-    /**
-     * Assign user role
-     *
-     * @param $userId
-     * @param $roleSlug
-     * @return bool
-     */
-    public function assignRole($userId, $roleSlug)
-    {
-        /*$role = Sentinel::findRoleBySlug($roleSlug);
-
-        $user = $this->user->find($userId);
-
-        $user->roles()->attach($role);*/
-
-        return true;
-    }
 
     /**
      * Assign user permissions
