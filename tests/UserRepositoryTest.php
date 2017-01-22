@@ -7,13 +7,18 @@ class UserRepositoryTest extends TestCase
 
 
     /**
-     * Test function for get promotions
+     * Test 
      */
     public function testGetPromotions()
     {
         $result = (object)[
             0 => (object)['id' => 1, 'title'=>'title', 'image'=>'image', 'bank_id'=>1, 'creditcards'=>'["1","2"]'],
             1 => (object)['id' => 2, 'title'=>'title', 'image'=>'image', 'bank_id'=>1, 'creditcards'=>'["1","2"]']
+        ];
+
+        $failResult = (object)[
+            0 => (object)['id' => 1, 'title'=>'title', 'image'=>'image', 'bank_id'=>1, 'creditcards'=>'["1","2"]'],
+            1 => (object)['id' => 2, 'title'=>'title', 'image'=>'image', 'bank_id'=>1]
         ];
         
         //mock db connection
@@ -27,6 +32,6 @@ class UserRepositoryTest extends TestCase
 
         $this->app->instance('App\Models\Promotion', $dbMock);
         $repo = $this->app->make('App\Repositories\Contracts\UserRepositoryInterface');
-        $this->assertSame($result, $repo->getPromotions(1));
+        $this->assertSame($failResult, $repo->getPromotions(1));
     }
 }
