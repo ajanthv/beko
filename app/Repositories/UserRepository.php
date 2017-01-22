@@ -186,7 +186,14 @@ class UserRepository implements UserRepositoryInterface
 
         return true;
     }
-    
+
+    /**
+     * Create Promotion
+     *
+     * @param $data
+     * @param $imageName
+     * @return bool
+     */
     public function createPromotion($data, $imageName)
     {
         $promotion_data = [
@@ -201,6 +208,12 @@ class UserRepository implements UserRepositoryInterface
         return true;
     }
 
+    /**
+     * Get Promotions by bank
+     *
+     * @param $bankId
+     * @return mixed
+     */
     public function getPromotions($bankId)
     {
         return $this->promotion->where('bank_id', $bankId)->get();
