@@ -203,7 +203,7 @@ class UserRepository implements UserRepositoryInterface
 
     public function getPromotions($bankId)
     {
-        return $this->promotion->where('bank_id', $bankId)->get()->toArray();
+        return $this->promotion->where('bank_id', $bankId)->get();
 
     }
 }

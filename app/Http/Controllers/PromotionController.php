@@ -60,6 +60,8 @@ class PromotionController extends Controller
         $bankId = isset($data['bank_id']) ? $data['bank_id'] : 1;
         
         $promotions = $this->userRepo->getPromotions($bankId);
+        
+        $promotions = $promotions->toArray();
 
         $proms = [];
         foreach ($promotions as $promotion) {
